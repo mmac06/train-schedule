@@ -44,7 +44,7 @@
             <div class="col-sm-1"></div>
         </div>
 
-<!-- Add train form/div -->
+        <!-- Add train form/div -->
         <div class="row body" id="form">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
@@ -56,11 +56,13 @@
                         <form>
                             <div class="form-group">
                                 <label for="train-name-input">Train Name</label>
-                                <input class="form-control" id="train-name-input" placeholder="example: Southshore Line" type="text">
+                                <input class="form-control" id="train-name-input" placeholder="example: Southshore Line"
+                                    type="text">
                             </div>
                             <div class="form-group">
                                 <label for="destination-input">Destination</label>
-                                <input class="form-control" id="destination-input" placeholder="example: Chicago" type="text">
+                                <input class="form-control" id="destination-input" placeholder="example: Chicago"
+                                    type="text">
                             </div>
                             <div class="form-group">
                                 <label for="time-input">First Train Time (HH:mm -- Military Time)</label>
@@ -68,7 +70,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="frequency-input">Frequency (minutes)</label>
-                                <input class="form-control" id="frequency-input" placeholder="example: 30" type="number">
+                                <input class="form-control" id="frequency-input" placeholder="example: 30"
+                                    type="number">
                             </div>
                             <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
                         </form>
@@ -84,25 +87,13 @@
         <!-- Added link to the jQuery Library/ Javascript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+        <!-- Link to Moment.js goes here -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
-
-
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyDbAOdKBJeNNyuxSHBTHJDlva--BDMgN_I",
-                authDomain: "bootcamp-train-station.firebaseapp.com",
-                databaseURL: "https://bootcamp-train-station.firebaseio.com",
-                projectId: "bootcamp-train-station",
-                storageBucket: "bootcamp-train-station.appspot.com",
-                messagingSenderId: "1048074352466",
-                appId: "1:1048074352466:web:0f5108f63c93a3e5"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-        </script>
+        <script src="/train-schedule/assets/javascript/app.js"></script>
 </body>
 
 </html>
