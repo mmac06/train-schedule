@@ -6,10 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Schedule</title>
+
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+    <!-- Link to Moment.js goes here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- CSS style sheet -->
     <link rel="stylesheet" href="/train-schedule/assets/css/styles.css">
+
 </head>
 
 <body>
@@ -32,17 +43,28 @@
                         Header
                     </div>
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
-                                    Title</cite>
-                            </footer>
-                        </blockquote>
+                        <table class="table table-sm table-hover" id="train-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">First Train Time (HH:mm)</th>
+                                    <th scope="col">Frequency (minutes)</th>
+                                    <th scope="col">XXXX</th>
+                                    <th scope="col">XXXX</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="col-sm-1"></div>
         </div>
+
+
+
 
         <!-- Add train form/div -->
         <div class="row body" id="form">
@@ -73,7 +95,7 @@
                                 <input class="form-control" id="frequency-input" placeholder="example: 30"
                                     type="number">
                             </div>
-                            <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+                            <button class="btn btn-primary float-right" id="submit-btn">Submit</button>
                         </form>
 
                     </div>
@@ -86,13 +108,6 @@
 
         <!-- Added link to the jQuery Library/ Javascript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <!-- Link to Moment.js goes here -->
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
         <script src="/train-schedule/assets/javascript/app.js"></script>
 </body>
 
