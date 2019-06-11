@@ -73,10 +73,20 @@ database.ref().on("child_added", function (childSnapshot) {
     var tFrequency = childSnapshot.val().frequency;
   
     // Train Info
-    console.log(tName);
+    console.log("tName: " + tName);
     console.log(tDestination);
     console.log(tTime);
-    console.log(tFrequency);
+    console.log("tFrequency: " + tFrequency);
+
+    var m = moment();
+    console.log("m: " + m);
+    var m2 = $("#frequency-input").val().trim();
+    // console.log("m2: " + m2);
+
+    var nextTrain = moment().diff((m2), "minutes");
+    console.log("nextTrain: " + nextTrain);
+
+
   
     // Convert format of train time
     // var timeConvert = moment(tTime, "HH:mm");
