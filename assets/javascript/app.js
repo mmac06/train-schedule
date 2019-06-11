@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyDbAOdKBJeNNyuxSHBTHJDlva--BDMgN_I",
-    authDomain: "bootcamp-train-station.firebaseapp.com",
-    databaseURL: "https://bootcamp-train-station.firebaseio.com",
-    projectId: "bootcamp-train-station",
-    storageBucket: "bootcamp-train-station.appspot.com",
-    messagingSenderId: "1048074352466",
-    appId: "1:1048074352466:web:0f5108f63c93a3e5"
+    apiKey: "AIzaSyCQ0jtHUsZ4-7sD5h7Fq1jTmayoPb_Tc9Q",
+    authDomain: "train-station2.firebaseapp.com",
+    databaseURL: "https://train-station2.firebaseio.com",
+    projectId: "train-station2",
+    storageBucket: "train-station2.appspot.com",
+    messagingSenderId: "261058496983",
+    appId: "1:261058496983:web:08d43fe67aeb7f42"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -60,3 +60,49 @@ $("#submit-btn").on("click", function (e) {
     $("#frequency-input").val("");
 
 });
+
+
+// Create Firebase event for adding train to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val());
+  
+    // Store everything into a variable.
+    var tName = childSnapshot.val().name;
+    var tDestination = childSnapshot.val().destination;
+    var tTime = childSnapshot.val().time;
+    var tFrequency = childSnapshot.val().frequency;
+  
+    // Train Info
+    console.log(tName);
+    console.log(tDestination);
+    console.log(tTime);
+    console.log(tFrequency);
+  
+    // Convert format of train time
+    // var timeConvert = moment(tTime, "HH:mm");
+    
+    // unix(tTime).format("HH:mm");
+    // console.log("timeConvert: " + timeConvert);
+  
+    // Calculate the months worked using hardcore math
+    // To calculate the months worked
+    // var empMonths = moment().diff(moment(empStart, "X"), "months");
+    // console.log(empMonths);
+  
+    // // Calculate the total billed rate
+    // var empBilled = empMonths * empRate;
+    // console.log(empBilled);
+  
+    // // Create the new row
+    var newRow = $("<tr>").append(
+      $("<td>").text(tName),
+      $("<td>").text(tDestination),
+      $("<td>").text(tTime),
+      $("<td>").text(tFrequency),
+      $("<td>").text("X"),
+      $("<td>").text("X")
+    );
+  
+    // Append the new row to the table
+    $("#train-table > tbody").append(newRow);
+  });
