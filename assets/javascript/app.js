@@ -78,13 +78,16 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log(tTime);
     console.log("tFrequency: " + tFrequency);
 
+
+
     var m = moment();
     console.log("m: " + m);
-    var m2 = $("#frequency-input").val().trim();
+    var m2 = $("#time-input").val().trim();
+    var newTime = moment().add(m2).format("HH:mm")
     // console.log("m2: " + m2);
 
-    var nextTrain = moment().diff((m2), "minutes");
-    console.log("nextTrain: " + nextTrain);
+    // var nextTrain = moment().diff((m2), "minutes");
+    console.log("newTime: " + newTime);
 
 
   
@@ -93,15 +96,7 @@ database.ref().on("child_added", function (childSnapshot) {
     
     // unix(tTime).format("HH:mm");
     // console.log("timeConvert: " + timeConvert);
-  
-    // Calculate the months worked using hardcore math
-    // To calculate the months worked
-    // var empMonths = moment().diff(moment(empStart, "X"), "months");
-    // console.log(empMonths);
-  
-    // // Calculate the total billed rate
-    // var empBilled = empMonths * empRate;
-    // console.log(empBilled);
+
   
     // // Create the new row
     var newRow = $("<tr>").append(
@@ -109,7 +104,7 @@ database.ref().on("child_added", function (childSnapshot) {
       $("<td>").text(tDestination),
       $("<td>").text(tTime),
       $("<td>").text(tFrequency),
-      $("<td>").text("X"),
+      $("<td>").text(newTime),
       $("<td>").text("X")
     );
   
